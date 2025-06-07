@@ -1,0 +1,32 @@
+import os
+from openai import OpenAI
+from openai import APIError
+
+# Ganti dengan API Key OpenRouter Anda secara langsung untuk pengujian lokal/Colab
+# Atau jika di Colab, simpan sebagai Environment Variable
+OPENROUTER_API_KEY = "sk-or-v1-xxxxxxxxxxxxxxxxxxxxxxxxx" 
+
+def test_gemini_insight(prompt_text, model_name="google/gemini-flash-1.5"):
+    try:
+        client = OpenAI(
+            api_key=OPENROUTER_API_KEY,
+            base_url="https://openrouter.ai/api/v1"
+        )
+        response = client.chat.completions.create(
+            model=model_name,
+            messages=[
+                {"role": "user", "content": prompt_text}
+            ]
+        )
+        if response.choices and response.choices[0].message and response.choices[0].message.content:
+            return response.choices[0].message.content
+        else:
+            return "Respons kosong atau tidak valid."
+    except APIError as e:
+        return f"Kesalahan API: {e.status_code} - {e.response.text}"
+    except Exception as e:
+        return f"Kesalahan umum: {e}"
+
+prompt = "Berikan 3 wawasan singkat tentang cuaca di Bekasi hari ini (6 Juni 2025)."
+insight = test_gemini_insight(prompt)
+print(insight)
