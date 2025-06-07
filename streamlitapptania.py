@@ -21,7 +21,7 @@ def get_gemini_insight(prompt):
     try:
         # URL API Gemini (gemini-2.0-flash)
         # API key akan disediakan oleh lingkungan Canvas saat runtime jika dikosongkan
-        api_key = ""
+        api_key = "AIzaSyDNlcVzOTMBYS8-0iNySiLEbUrdm8w57IQ"
         api_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={api_key}"
 
         chat_history = [{"role": "user", "parts": [{"text": prompt}]}]
