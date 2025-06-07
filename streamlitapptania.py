@@ -130,7 +130,7 @@ def create_chart(df, chart_type, x=None, y=None, color=None, title="", labels={}
 
 # --- Main Aplikasi ---
 st.title("Dasbor Intelijen Media Interaktif")
-st.markdown("oleh **Tania Putri Rachmadani**")
+st.markdown("oleh *Tania Putri Rachmadani*")
 
 st.markdown("""
 <style>
@@ -282,7 +282,7 @@ st.markdown("""
     Anda sekarang dapat berinteraksi dengan grafik dan meninjau wawasan yang dihasilkan.
     Unggah berkas CSV baru untuk menganalisis data yang berbeda.
 
-    **Catatan Penting:** Fungsionalitas unduh PDF (yang ada di versi aplikasi web HTML) tidak dapat diterapkan secara langsung di Streamlit
+    *Catatan Penting:* Fungsionalitas unduh PDF (yang ada di versi aplikasi web HTML) tidak dapat diterapkan secara langsung di Streamlit
     karena perbedaan arsitektur (Streamlit berjalan di sisi server, sedangkan unduh PDF yang sebelumnya membutuhkan fungsionalitas sisi klien).
     Anda dapat menggunakan fungsionalitas cetak browser untuk menyimpan halaman sebagai PDF jika diperlukan.
 """)
